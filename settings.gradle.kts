@@ -6,7 +6,7 @@ dependencyResolutionManagement {
 //    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 }
 
-rootProject.name = "ise-lab-code-knowledge-representation"
+rootProject.name = "eass23-cl-in-mas-exercises"
 
 val n = 5
 
