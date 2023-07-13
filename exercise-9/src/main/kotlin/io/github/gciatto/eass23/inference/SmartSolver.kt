@@ -16,15 +16,13 @@ class SmartSolver(knowledgeBase: Theory) : AbstractSolver(knowledgeBase) {
         handleRulesInARow(query, remainingGoals, unifier, currentGoal, sortedRules)
     }
 
-    private fun isRecursive(rule: Rule): Boolean = when {
-        rule.bodyItems.any { it is Struct &&  it.indicator == rule.head.indicator } -> true
-        else -> false
-    }
+    private fun isRecursive(rule: Rule): Boolean =
+        TODO("return true if $rule is recursive")
 
-    private val nonRecursiveFirst = Comparator<Rule> { o1, o2 ->
+    private val nonRecursiveFirst = Comparator<Rule> { r1, r2 ->
         when {
-            isRecursive(o1) == isRecursive(o2) -> 0
-            !isRecursive(o1) && isRecursive(o2) -> -1
+            isRecursive(r1) == isRecursive(r2) -> 0
+            !isRecursive(r1) && isRecursive(r2) -> -1
             else -> 1
         }
     }

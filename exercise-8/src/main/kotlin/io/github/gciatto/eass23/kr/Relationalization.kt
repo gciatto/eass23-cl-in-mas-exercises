@@ -1,9 +1,6 @@
 package io.github.gciatto.eass23.kr
 
-import it.unibo.tuprolog.core.Atom
-import it.unibo.tuprolog.core.Fact
-import it.unibo.tuprolog.core.Indicator
-import it.unibo.tuprolog.core.Struct
+import it.unibo.tuprolog.core.*
 import it.unibo.tuprolog.theory.Theory
 
 /**
@@ -18,13 +15,14 @@ import it.unibo.tuprolog.theory.Theory
  * in the same exact order they are used in the _propositional_ theory
  */
 fun relationalise(theory: Theory, predication: String, vararg attributes: String): Theory {
-    val relationalTheory = theory.get(Indicator.of(predication, attributes.size))
-        .flatMapIndexed { index, rule ->
-            val key = Atom.of("instance$index")
-            sequenceOf(Struct.of(predication, key)) +
-                attributes.asSequence().mapIndexed { attributeIndex, attribute ->
-                    Struct.of(attribute, key, rule.head[attributeIndex])
-                }
-        }.map(Fact::of)
+    val relationalTheory: Sequence<Clause> = TODO(
+        """
+            - For each rule/fact in $theory...
+                - generate a primary key for that clause
+                - yield a fact $predication(<primary key>).
+                - then for each attribute name in $attributes...
+                    - yield a fact <attribute name>(<primary key>, <attribute value>)
+        """.trimIndent()
+    )
     return Theory.of(relationalTheory)
 }

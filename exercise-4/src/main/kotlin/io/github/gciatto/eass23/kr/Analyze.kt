@@ -23,32 +23,8 @@ data class Analysis(val functors: Set<Symbol>, val predications: Set<Symbol>, va
  * used with the [theory]
  */
 fun analyze(theory: Theory): Analysis {
-    val predications = enumeratePredicates(theory)
-        .map { Symbol(it.functor, it.arity) }
-        .toSet()
-    val functors = enumeratePredicates(theory)
-        .enumerateSymbolsInStructs()
-        .filter { it !in predications }
-        .toSet()
-    val variables = theory.rules.flatMap { it.variables }.distinct().map { Symbol(it.name) }.toSet()
+    val predications: Set<Symbol> = TODO("Get all the functors/arities of all *first-level* structures in all heads and bodies of all clauses in $theory")
+    val functors: Set<Symbol> = TODO("Get all the functors/arities of all structures in all head and bodies of all clauses in $theory, at any level of depth, then exclude the ones in $predications")
+    val variables: Set<Symbol> = TODO("Get all the variables in all terms in all clauses in $theory")
     return Analysis(functors, predications, variables)
 }
-
-private fun enumeratePredicates(theory: Theory): Sequence<Struct> =
-    theory.rules.asSequence()
-        .flatMap { it.bodyItems.asSequence() + it.head }
-        .filterIsInstance<Struct>()
-        .filter { !it.isTrue  }
-
-private fun <T : Term> Sequence<T>.enumerateSymbolsInStructs(): Sequence<Symbol> =
-    sequence {
-        for (item in filterIsInstance<Struct>()) {
-            yield(Symbol(item.functor, item.arity))
-            for (arg in item.args) {
-                if (arg is Struct) {
-                    yield(Symbol(arg.functor, arg.arity))
-                    arg.argsSequence.enumerateSymbolsInStructs()
-                }
-            }
-        }
-    }

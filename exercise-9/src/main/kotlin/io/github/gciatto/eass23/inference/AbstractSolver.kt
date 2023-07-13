@@ -81,9 +81,6 @@ abstract class AbstractSolver(knowledgeBase: Theory) : Solver {
         currentGoal: Struct,
         rules: Sequence<Rule>
     ) {
-        for (rule in rules) {
-            val substitution = unifier + (currentGoal mguWith rule.head)
-            yieldAll(solve(query, rule.bodyItems.toList() + remainingGoals, substitution))
-        }
+        TODO("attempt to continue resolution of $currentGoal with the rules in $rules")
     }
 }

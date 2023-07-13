@@ -13,7 +13,7 @@ class ClauseRefreshing {
     fun refreshingMember() {
         val member = Clause.parse("member(X, [H | T]) :- member(X, T)")
 
-        val memberCopy = member.freshCopy()
+        val memberCopy: Clause =  TODO("refresh $member")
 
         assertNotEquals(member, memberCopy)
         assertTrue(member.equals(memberCopy, useVarCompleteName = false))
@@ -25,7 +25,7 @@ class ClauseRefreshing {
     fun refreshingGrandparent() {
         val grandparent = Clause.parse("grandparent(X, Y) :- parent(X, Z), parent(Z, Y)")
 
-        val grandparentCopy = grandparent.freshCopy()
+        val grandparentCopy: Clause = TODO("refresh $grandparent")
 
         assertNotEquals(grandparent, grandparentCopy)
         assertTrue(grandparent.equals(grandparentCopy, useVarCompleteName = false))

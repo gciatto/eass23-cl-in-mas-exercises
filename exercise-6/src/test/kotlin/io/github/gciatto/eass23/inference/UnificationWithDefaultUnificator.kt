@@ -42,22 +42,22 @@ class UnificationWithDefaultUnificator {
     @Test
     fun mguAmongVariables() {
         assertEquals(
-            Substitution.empty(),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             X mguWith X
         )
 
         assertEquals(
-            Substitution.unifier(X to Y),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             X mguWith Y
         )
 
         assertEquals(
-            Substitution.unifier(X to Z),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             X mguWith Z
         )
 
         assertEquals(
-            Substitution.unifier(Y to Z),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             Y mguWith Z
         )
     }
@@ -71,47 +71,47 @@ class UnificationWithDefaultUnificator {
         val pearson = Struct.of("pearson", X, Y, Z)
 
         assertEquals(
-            Substitution.of(X to giovanni, Y to ciatto, Z to age),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             person1 mguWith person2
         )
 
         assertEquals(
-            Substitution.of(Z to anotherAge),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             person2 mguWith person3
         )
 
         assertEquals(
-            Substitution.failed(),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             person1 mguWith person3
         )
 
         assertEquals(
-            Substitution.failed(),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             person1 mguWith person4
         )
 
         assertEquals(
-            Substitution.failed(),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             person2 mguWith person4
         )
 
         assertEquals(
-            Substitution.failed(),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             person3 mguWith person4
         )
 
         assertEquals(
-            Substitution.failed(),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             pearson mguWith person4
         )
 
         assertEquals(
-            Substitution.failed(),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             pearson mguWith person4
         )
 
         assertEquals(
-            Substitution.failed(),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             pearson mguWith person4
         )
     }
@@ -127,22 +127,22 @@ class UnificationWithDefaultUnificator {
         val pattern4 = List.from(X, Y, Z, last=W)
 
         assertEquals(
-            Substitution.of(X to giovanni, Y to List.of(ciatto, age)),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             list mguWith pattern1
         )
 
         assertEquals(
-            Substitution.of(X to giovanni, Y to ciatto, Z to age),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             list mguWith pattern2
         )
 
         assertEquals(
-            Substitution.failed(),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             list mguWith pattern3
         )
 
         assertEquals(
-            Substitution.of(X to giovanni, Y to ciatto, Z to age, W to EmptyList.instance),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             list mguWith pattern4
         )
     }

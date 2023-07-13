@@ -23,7 +23,7 @@ class RetrievingClausesFromTheories {
         val missing: Sequence<Rule> = theory[Struct.parse("member(A, B, C)")]
 
         assertEquals(
-            emptyList(),
+            TODO("What list of clauses do you expect the query above to produce?"),
             missing.toList()
         )
     }
@@ -33,7 +33,7 @@ class RetrievingClausesFromTheories {
         val member2: Sequence<Rule> = theory[Struct.parse("member(A, B)")]
 
         assertEquals(
-            clauses.slice(0 .. 2),
+            TODO("What list of clauses do you expect the query above to produce?"),
             member2.toList()
         )
     }
@@ -43,7 +43,7 @@ class RetrievingClausesFromTheories {
         val member2: Sequence<Rule> = theory.get(Struct.parse("member(A, B)"))
 
         assertEquals(
-            clauses.slice(0 .. 2),
+            TODO("What list of clauses do you expect the query above to produce?"),
             member2.toList()
         )
     }
@@ -53,7 +53,7 @@ class RetrievingClausesFromTheories {
         val member1: Sequence<Rule> = theory[Struct.parse("member(A)")]
 
         assertEquals(
-            clauses.slice(4 .. 4),
+            TODO("What list of clauses do you expect the query above to produce?"),
             member1.toList()
         )
     }
@@ -63,7 +63,7 @@ class RetrievingClausesFromTheories {
         val member0: Sequence<Rule> = theory[Atom.of("member")]
 
         assertEquals(
-            clauses.slice(3 .. 3),
+            TODO("What list of clauses do you expect the query above to produce?"),
             member0.toList()
         )
     }
@@ -73,7 +73,7 @@ class RetrievingClausesFromTheories {
         val member2WithNonEmptyList: Sequence<Rule> = theory[Struct.parse("member(_, [_ | _])")]
 
         assertEquals(
-            clauses.slice(1 .. 2),
+            TODO("What list of clauses do you expect the query above to produce?"),
             member2WithNonEmptyList.toList()
         )
     }

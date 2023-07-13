@@ -23,9 +23,9 @@ class ClauseCreation {
         """.trimIndent()
 
         val theory: Theory = Theory.of(
-            Fact.of(Atom.of("a_fact")),
-            Rule.of(Atom.of("a_head"), Atom.of("a_body")),
-            Directive.of(Atom.of("a_directive"))
+            TODO("Create a $Fact whose representation is `a_fact'"),
+            TODO("Create a $Rule whose representation is `a_head :- a_body'"),
+            TODO("Create a $Directive whose representation is `:- a_directive'"),
         )
         val expected = parser.parseTheory(representation)
 
@@ -40,18 +40,7 @@ class ClauseCreation {
             sum(s(N), M, s(R)) :- sum(N, M, R).
         """.trimIndent()
 
-        val X = Var.of("X")
-        val N = Var.of("N")
-        val M = Var.of("M")
-        val R = Var.of("R")
-
-        val theory: Theory = Theory.of(
-            Fact.of(Struct.of("sum", Atom.of("z"), X, X)),
-            Rule.of(
-                Struct.of("sum", Struct.of("s", N), M, Struct.of("s", R)),
-                Struct.of("sum", N, M, R)
-            )
-        )
+        val theory: Theory = TODO("Create a $Theory equal to $representation (a part from variables names)")
         val expected = parser.parseTheory(representation)
 
         assertTrue { expected.equals(theory, useVarCompleteName = false) }
@@ -60,21 +49,14 @@ class ClauseCreation {
     }
 
     @Test
+    @Suppress("LocalVariableName")
     fun simpleConcat3() {
         val representation = """
             concat([], L, L).
             concat([X | Xs], Ys, [X | Zs]) :- concat(Xs, Ys, Zs).
         """.trimIndent()
 
-        val theory: Theory = Theory.of(
-            Scope.empty { factOf(structOf("concat", emptyList, varOf("L"), varOf("L"))) },
-            Scope.empty {
-                ruleOf(
-                    structOf("concat", consOf(varOf("X"), varOf("Xs")), varOf("Ys"), consOf(varOf("X"), varOf("Zs"))),
-                    structOf("concat", varOf("Xs"), varOf("Ys"), varOf("Zs"))
-                )
-            }
-        )
+        val theory: Theory = TODO("Create a $Theory equal to $representation (a part from variables names)")
         val expected = parser.parseTheory(representation)
 
         assertTrue { expected.equals(theory, useVarCompleteName = false) }

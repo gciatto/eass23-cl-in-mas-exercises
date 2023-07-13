@@ -32,15 +32,7 @@ fun herbrand(vararg functors: Symbol, max: Int = -1): Sequence<Term> {
     val constants = functors.filter { it.arity == 0 }.map { Atom.of(it.name) }.toSet()
     val functorsWithArity = functors.filter { it.arity > 0 }.toSet()
     return sequence {
-        val universe: MutableSet<Term> = mutableSetOf()
-        var expansion: Set<Term> = constants
-        var i = max
-        while (i >= 0 && expansion.isNotEmpty()) {
-            universe.addAll(expansion)
-            yieldAll(expansion)
-            expansion = expansion(universe, functorsWithArity).toSet()
-            i--
-        }
+        TODO("Implement the algorithm for computing the Herbrand universe")
     }
 }
 

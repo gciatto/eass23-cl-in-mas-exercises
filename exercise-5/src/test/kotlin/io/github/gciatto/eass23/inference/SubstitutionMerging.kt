@@ -27,7 +27,7 @@ class SubstitutionMerging {
     @Test
     fun mergeDisjunct() {
         assertEquals(
-            Substitution.of(X to a, Y to b, Z to c),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             Substitution.of(X to a, Y to b) + Substitution.of(Z to c)
         )
     }
@@ -35,7 +35,7 @@ class SubstitutionMerging {
     @Test
     fun mergeWithFail() {
         assertEquals(
-            Substitution.failed(),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             Substitution.of(X to a) + Substitution.failed()
         )
     }
@@ -43,7 +43,7 @@ class SubstitutionMerging {
     @Test
     fun mergeWithOverlap() {
         assertEquals(
-            Substitution.of(X to a, Y to b, Z to c),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             Substitution.of(X to a, Y to b) + Substitution.of(Y to b, Z to c)
         )
     }
@@ -51,7 +51,7 @@ class SubstitutionMerging {
     @Test
     fun mergeWithContradiction() {
         assertEquals(
-            Substitution.failed(),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             Substitution.of(X to a, Y to b) + Substitution.of(Y to one, Z to two)
         )
     }
@@ -59,17 +59,17 @@ class SubstitutionMerging {
     @Test
     fun mergeWithVariables() {
         assertEquals(
-            Substitution.of(X to one, Y to one, Z to two),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             Substitution.of(X to Y) + Substitution.of(Y to one, Z to two)
         )
 
         assertEquals(
-            Substitution.of(X to a, Y to a, Z to a),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             Substitution.of(X to Y, Y to Z) + Substitution.of(Z to a)
         )
 
         assertEquals(
-            Substitution.of(Y to X, Z to X),
+            TODO("What $Substitution do you expect the expression below to produce?"),
             Substitution.of(X to Y, Y to Z) + Substitution.of(Z to X)
         )
     }

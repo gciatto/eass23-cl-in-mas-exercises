@@ -20,26 +20,27 @@ class SubstitutionApplication {
     @Test
     fun applyToVariable() {
         assertEquals(
-            X,
+            TODO("What term do you expect the application below to produce?"),
             X.apply(Substitution.empty())
         )
 
         assertEquals(
-            hello,
+            TODO("What term do you expect the application below to produce?"),
             X.apply(Substitution.unifier(X, hello))
         )
 
         assertEquals(
-            X,
+            TODO("What term do you expect the application below to produce?"),
             X.apply(Substitution.unifier(Y to hello))
         )
 
         assertEquals(
-            world,
+            TODO("What term do you expect the application below to produce?"),
             X.apply(Substitution.unifier(Y to hello, X to world))
         )
 
         assertFailsWith<SubstitutionApplicationException> {
+            // nothing to do here, just read and understand this case
             X.apply(Substitution.failed())
         }
     }
@@ -47,26 +48,27 @@ class SubstitutionApplication {
     @Test
     fun applyToConstant() {
         assertEquals(
-            world,
+            TODO("What term do you expect the application below to produce?"),
             world.apply(Substitution.empty())
         )
 
         assertEquals(
-            world,
+            TODO("What term do you expect the application below to produce?"),
             world.apply(Substitution.unifier(X, hello))
         )
 
         assertEquals(
-            world,
+            TODO("What term do you expect the application below to produce?"),
             world.apply(Substitution.unifier(Y to hello))
         )
 
         assertEquals(
-            world,
+            TODO("What term do you expect the application below to produce?"),
             world.apply(Substitution.unifier(Y to hello, X to world))
         )
 
         assertFailsWith<SubstitutionApplicationException> {
+            // nothing to do here, just read and understand this case
             world.apply(Substitution.failed())
         }
     }
@@ -76,26 +78,27 @@ class SubstitutionApplication {
         val fX = Struct.of("f", X)
 
         assertEquals(
-            fX,
+            TODO("What term do you expect the application below to produce?"),
             fX.apply(Substitution.empty())
         )
 
         assertEquals(
-            Struct.of("f", hello),
+            TODO("What term do you expect the application below to produce?"),
             fX.apply(Substitution.of(X, hello))
         )
 
         assertEquals(
-            fX,
+            TODO("What term do you expect the application below to produce?"),
             fX.apply(Substitution.of(Y to hello))
         )
 
         assertEquals(
-            Struct.of("f", world),
+            TODO("What term do you expect the application below to produce?"),
             fX.apply(Substitution.of(Y to hello, X to world))
         )
 
         assertFailsWith<SubstitutionApplicationException> {
+            // nothing to do here, just read and understand this case
             fX.apply(Substitution.failed())
         }
     }
@@ -105,22 +108,22 @@ class SubstitutionApplication {
         val listPattern = Cons.of(X, Y)
 
         assertEquals(
-            listPattern,
+            TODO("What term do you expect the application below to produce?"),
             listPattern.apply(Substitution.empty())
         )
 
         assertEquals(
-            Cons.of(Integer.ONE, Y),
+            TODO("What term do you expect the application below to produce?"),
             listPattern.apply(Substitution.of(X to Integer.ONE))
         )
 
         assertEquals(
-            List.of(Integer.ONE),
+            TODO("What term do you expect the application below to produce?"),
             listPattern.apply(Substitution.of(X to Integer.ONE, Y to EmptyList.instance))
         )
 
         assertEquals(
-            List.of(Integer.ONE, hello, world),
+            TODO("What term do you expect the application below to produce?"),
             listPattern.apply(
                 Substitution.of(
                     X to Integer.ONE,
@@ -130,6 +133,7 @@ class SubstitutionApplication {
         )
 
         assertFailsWith<SubstitutionApplicationException> {
+            // nothing to do here, just read and understand this case
             listPattern.apply(Substitution.failed())
         }
     }
