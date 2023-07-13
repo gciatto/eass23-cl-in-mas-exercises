@@ -18,24 +18,24 @@ class TestHerbrandPeano {
     @Test
     fun testPartialHerbrandUniverse0() {
         assertEquals(
-            herbrand(*functors, max = 0).toList(),
-            peanoIntegers.take(1).toList()
+            herbrand(*functors, max = 0).toSet(),
+            peanoIntegers.take(1).toSet()
         )
     }
 
     @Test
     fun testPartialHerbrandUniverse1() {
         assertEquals(
-            herbrand(*functors, max = 1).toList(),
-            peanoIntegers.take(2).toList()
+            herbrand(*functors, max = 1).toSet(),
+            peanoIntegers.take(2).toSet()
         )
     }
 
     @Test
     fun testPartialHerbrandUniverse3() {
         assertEquals(
-            herbrand(*functors, max = 2).map { println(it); it }.toList(),
-            peanoIntegers.take(3).toList()
+            herbrand(*functors, max = 2).map { println(it); it }.toSet(),
+            peanoIntegers.take(3).toSet()
         )
     }
 }

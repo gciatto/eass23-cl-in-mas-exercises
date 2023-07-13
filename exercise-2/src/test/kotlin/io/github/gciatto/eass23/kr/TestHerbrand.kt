@@ -22,31 +22,31 @@ class TestHerbrand {
     @Test
     fun testPartialHerbrandUniverse0() {
         assertEquals(
-            herbrand(*functors, max = 0).toList(),
-            listOf(Atom.of("a"), Atom.of("b"))
+            herbrand(*functors, max = 0).toSet(),
+            setOf(Atom.of("a"), Atom.of("b"))
         )
     }
 
     @Test
     fun testPartialHerbrandUniverse1() {
         assertEquals(
-            herbrand(*functors, max = 1).toList(),
-            listOf(
+            herbrand(*functors, max = 1).toSet(),
+            sequenceOf(
                 "a",
                 "b",
                 "f(a, a)",
                 "f(a, b)",
                 "f(b, a)",
                 "f(b, b)",
-            ).map(parser::parseTerm)
+            ).map(parser::parseTerm).toSet()
         )
     }
 
     @Test
     fun testPartialHerbrandUniverse3() {
         assertEquals(
-            herbrand(*functors, max = 2).toList(),
-            listOf(
+            herbrand(*functors, max = 2).toSet(),
+            sequenceOf(
                 "a",
                 "b",
                 "f(a, a)",
@@ -85,7 +85,7 @@ class TestHerbrand {
                 "f(f(b, b), f(a, b))",
                 "f(f(b, b), f(b, a))",
                 "f(f(b, b), f(b, b))",
-            ).map(parser::parseTerm)
+            ).map(parser::parseTerm).toSet()
         )
     }
 }

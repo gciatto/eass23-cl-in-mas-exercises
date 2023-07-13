@@ -8,7 +8,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "eass23-cl-in-mas-exercises"
 
-val n = 5
+val n = 10
 
 for (i in 1 .. n) {
     include("exercise-$i")

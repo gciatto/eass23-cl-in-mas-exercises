@@ -60,7 +60,6 @@ class ClauseCreation {
     }
 
     @Test
-    @Suppress("LocalVariableName")
     fun simpleConcat3() {
         val representation = """
             concat([], L, L).

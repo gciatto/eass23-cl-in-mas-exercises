@@ -14,6 +14,8 @@ dependencies {
     // Use the Kotlin JDK 8 standard library.
     implementation(libs.kotlin.stdlib.jvm)
 
+    implementation(project(":exercise-9"))
+
     implementation(libs.tuprolog.theory)
     implementation(libs.tuprolog.parser.theory)
 

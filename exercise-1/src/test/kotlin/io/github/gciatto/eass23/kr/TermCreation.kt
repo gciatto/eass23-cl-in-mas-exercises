@@ -103,6 +103,7 @@ class TermCreation {
 
         assertEquals(expected, term)
         assertTrue(term is Struct)
+        assertTrue(term.isGround)
         assertEquals("person", term.functor)
         assertEquals(3, term.arity)
         assertEquals(
@@ -118,7 +119,9 @@ class TermCreation {
         val newRepresentation = "person(giovanni, ciatto, 30, DateOfBirth)"
         val newExpected = parser.parseTerm(newRepresentation)
 
+        assertNotSame(term, newTerm)
         assertTrue(newExpected.equals(newTerm, useVarCompleteName = false))
+        assertTrue(term.isGround)
     }
 
     @Test
