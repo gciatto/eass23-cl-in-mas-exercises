@@ -21,3 +21,7 @@ listOf("gui", "repl").forEach {
         standardInput = System.`in`
     }
 }
+
+allprojects {
+    group = "io.github.gciatto.eass23"
+}
