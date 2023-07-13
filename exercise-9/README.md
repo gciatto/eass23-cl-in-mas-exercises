@@ -1,7 +1,7 @@
 
 ### Order of exercises
 
-1. Exercise `./src/main/kotlin/it/unibo/ise/lab/resolution/`**`PrologLikeSolver.kt`** is about builtin functionalities
+1. Exercise **`PrologLikeSolver.kt`** is about builtin functionalities
     - here you should implement a depth-first, Prolog-like solver supporting the following functionalities:
         + __`assert/1`__: a meta-predicate supporting adding a clause to the KB
         + __`retract/1`__: a meta-predicate supporting deleting a clause to the KB
